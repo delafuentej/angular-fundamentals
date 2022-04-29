@@ -28,7 +28,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         </div>
     `,
     styles:[`
-    .green { color:greenyellow !important; }
+    /* .green { color:greenyellow !important; } */
     .bold {font-weight:bold }
     .thumbnail{ min-height:210px;}
     .pad-left{ margin-left:10px}
@@ -50,6 +50,7 @@ export class EventThumbnailComponent{
    getStartTimeStyle():any{
         const isEarlyStart = this.event && this.event.time ==='8:00 am';
         if(isEarlyStart)
+        
         return {color:'greenyellow', 'font-weight':'bold'}
         return {}
    }
