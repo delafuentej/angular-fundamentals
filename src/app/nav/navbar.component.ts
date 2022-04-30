@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     styles:[`
         .nav.navbar-nav {font-size:15px}
         #searchForm {margin-right:100px}
+        li> a.active {color:greenyellow;}
         @media (max-width:1200px){#searchForm{display:none}}
     `]
 })
