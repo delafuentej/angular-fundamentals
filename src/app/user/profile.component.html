@@ -15,8 +15,14 @@
           <label for="firstName">First Name:</label>
 
           <em
-            *ngIf="!validateFirstName()"
+            *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.required"
           >Required</em>
+
+          <em
+            *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.pattern"
+          >Must start with a letter</em>
+
+
           <input 
             formControlName="firstName"
             id="firstName" 
@@ -27,9 +33,17 @@
         class="form-group"
         [ngClass]="{'error':!validateLastName()}">
           <label for="lastName">Last Name:</label>
+
           <em
-            *ngIf="!validateLastName()"
-          >Required</em>
+          *ngIf="!validateLastName() && profileForm.controls.lastName.errors.required"
+        >Required</em>
+
+        <em
+          *ngIf="!validateLastName() && profileForm.controls.lastName.errors.pattern"
+        >Must start with a letter</em>
+
+
+          
           <input 
             formControlName="lastName"
             id="lastName" 
