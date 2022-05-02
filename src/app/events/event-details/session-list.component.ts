@@ -10,11 +10,17 @@ import { ISessions } from "../shared/index";
 export class SessionListComponent{
     @Input() sessions: ISessions[]
     @Input() filterBy: string;
+    @Input() sortBy: string;
     visibleSessions: ISessions[]=[];
 
     ngOnChanges(){
         if(this.sessions){
-            this.filterSessions(this.filterBy)
+            this.filterSessions(this.filterBy);
+
+            this.sortBy=== 'name' ? 
+            this.visibleSessions.sort(sortByNameAscending) 
+            : 
+            this.visibleSessions.sort(sortByVotesDescending)
         }
 
     }
@@ -28,4 +34,15 @@ export class SessionListComponent{
             })
         }
     }
+
+    
+}
+
+function sortByNameAscending(s1: ISessions, s2: ISessions){
+    if(s1.name > s2.name) return 1;
+    else if(s1.name > s2.name) return 0;
+    else return -1;
+}
+function sortByVotesDescending(s1: ISessions, s2: ISessions){
+    return s2.voters.length - s1.voters.length
 }
