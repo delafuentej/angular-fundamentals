@@ -11,7 +11,8 @@ import {
         EventRouteActivator,
         EventListResolver,
         CreateSessionComponent,
-        SessionListComponent
+        SessionListComponent,
+        DurationPipe
       } from './events/index'
 
 import { NavBarComponent } from './nav/navbar.component';
@@ -25,6 +26,7 @@ import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CollapsibleWell } from './common/collapsible-well.component';
 
+
 @NgModule({
   declarations: [
     EventsAppComponent,
@@ -37,6 +39,7 @@ import { CollapsibleWell } from './common/collapsible-well.component';
     NavBarComponent,
     SessionListComponent,
     CollapsibleWell,
+    DurationPipe
     
   
 
