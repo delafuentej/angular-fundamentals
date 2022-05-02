@@ -10,7 +10,7 @@
             >
                 {{session.name}}
                 <i
-                *ngIf="session.voters.length >2"
+                *ngIf="session.voters.length >=3"
                 class="glyphicon glyphicon-fire"
                 style="color:orangered"
                 >
