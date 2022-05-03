@@ -61,7 +61,11 @@ declare let toastr:Toastr;
       useValue: toastr
 
     },
-    EventRouteActivator, 
+    {
+      provide:EventRouteActivator,
+      useClass:EventRouteActivator
+    },
+    /* EventRouteActivator,  */
     EventListResolver,
     AuthService,
     {
