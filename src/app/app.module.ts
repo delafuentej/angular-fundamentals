@@ -17,7 +17,7 @@ import {
 
 import { NavBarComponent } from './nav/navbar.component';
 
-import { TOASTR_TOKEN, Toastr, CollapsibleWell, JQ_TOKEN} from './common/index';
+import { TOASTR_TOKEN, Toastr, CollapsibleWell, JQ_TOKEN,SimpleModalComponent} from './common/index';
 
 
 import { appRoutes } from './routes';
@@ -25,6 +25,7 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -44,7 +45,9 @@ let jQuery= window['$']
     NavBarComponent,
     SessionListComponent,
     CollapsibleWell,
-    DurationPipe
+    SimpleModalComponent,
+    DurationPipe,
+    
     
   
 
