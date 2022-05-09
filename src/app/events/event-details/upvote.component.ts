@@ -1,10 +1,12 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
+
 @Component({
     selector:'upvote',
     styleUrls:['./upvote.component.css'],
     template:`
         <div
+            
             class="votingWidgetContainer pointable"
             (click)="onClick()"
         >
@@ -40,6 +42,7 @@ export class UpVoteComponent{
     @Input() voted:boolean;
     @Output() vote= new EventEmitter();
 
+   
     onClick(){
         this.vote.emit({});
     }
