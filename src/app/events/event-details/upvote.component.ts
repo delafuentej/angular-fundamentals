@@ -13,15 +13,16 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
             <div class="well votingWidget">
                 <div class="votingButton">
                     <i
-                    *ngIf="voted"
+                    
                     class="glyphicon glyphicon-heart"
+                    [style.color]="iconColor"
                     >
                     </i> 
-                    <i
+                    <!-- <i
                     *ngIf="!voted"
                     class="glyphicon glyphicon-heart-empty"
                     >
-                    </i> 
+                    </i>  -->
                 </div>
 
                 <div
@@ -39,8 +40,13 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 export class UpVoteComponent{
     @Input() count:number;
-    @Input() voted:boolean;
+    @Input() set voted(value){
+        this.iconColor= value ? 'red': 'white';
+    }
     @Output() vote= new EventEmitter();
+    iconColor:string;
+    
+
 
    
     onClick(){
