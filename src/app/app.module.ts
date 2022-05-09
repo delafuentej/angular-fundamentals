@@ -17,7 +17,7 @@ import {
 
 import { NavBarComponent } from './nav/navbar.component';
 
-import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
+import { TOASTR_TOKEN, Toastr, CollapsibleWell, JQ_TOKEN} from './common/index';
 
 
 import { appRoutes } from './routes';
@@ -25,9 +25,11 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CollapsibleWell } from './common/collapsible-well.component';
 
-declare let toastr:Toastr;
+
+
+let toastr:Toastr= window['toastr'];
+let jQuery= window['$']
 
 
 @NgModule({
@@ -61,6 +63,11 @@ declare let toastr:Toastr;
       useValue: toastr
 
     },
+    {
+      provide: JQ_TOKEN,
+      useValue: jQuery
+    },
+
     {
       provide:EventRouteActivator,
       useClass:EventRouteActivator
