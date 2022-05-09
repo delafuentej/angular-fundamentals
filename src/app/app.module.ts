@@ -13,6 +13,7 @@ import {
         CreateSessionComponent,
         SessionListComponent,
         VoterService,
+        LocationValidator,
         DurationPipe
       } from './events/index'
 
@@ -27,6 +28,7 @@ import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpVoteComponent } from './events/event-details/upvote.component';
+
 
 
 
@@ -51,6 +53,7 @@ let jQuery= window['$']
     SimpleModalComponent,
     ModalTriggerDirective,
     UpVoteComponent,
+    LocationValidator,
     DurationPipe,
     
     
