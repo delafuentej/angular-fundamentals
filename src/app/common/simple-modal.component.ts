@@ -16,7 +16,7 @@ import { Component, Input } from "@angular/core";
                             type="button" 
                             class="close"
                             data-dismiss="modal"
-                            > <span>&times</span>
+                            > <span>&times;</span>
                         </button>
                         <h4
                             class="modal-title">

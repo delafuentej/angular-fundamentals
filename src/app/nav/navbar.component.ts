@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { AuthService } from '../user/auth.service';
 import { EventService } from '../events';
 import { ISessions } from '../events/shared/event.model';
+import { $ } from 'protractor';
 
 @Component({
     selector:'nav-bar',
-    templateUrl:'./nav-var.component.html',
+    templateUrl:'./navbar.component.html',
     styles:[`
         .nav.navbar-nav {font-size:15px}
         #searchForm {margin-right:100px}
@@ -20,8 +21,11 @@ export class NavBarComponent{
     foundSessions:ISessions[];
 
     constructor(public auth: AuthService, private eventService: EventService){
+       /* $('#id').modal() */
 
     }
+
+    
     searchSessions(searchTerm){
         this.eventService.searchSessions(searchTerm).subscribe( sessions=> {
             this.foundSessions= sessions;
