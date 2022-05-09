@@ -12,6 +12,7 @@ import {
         EventListResolver,
         CreateSessionComponent,
         SessionListComponent,
+        VoterService,
         DurationPipe
       } from './events/index'
 
@@ -25,6 +26,8 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpVoteComponent } from './events/event-details/upvote.component';
+
 
 
 
@@ -47,6 +50,7 @@ let jQuery= window['$']
     CollapsibleWell,
     SimpleModalComponent,
     ModalTriggerDirective,
+    UpVoteComponent,
     DurationPipe,
     
     
@@ -78,7 +82,9 @@ let jQuery= window['$']
     },
     /* EventRouteActivator,  */
     EventListResolver,
+    VoterService,
     AuthService,
+    
     {
       provide:'canDeactivateCreateEvent',
       useValue: checkDirtyState
