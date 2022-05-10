@@ -38,13 +38,15 @@ export class EventService {
       event.session=[]
       EVENTS.push(event) */
     }
-    updateEvent(event){
+    /* updateEvent(event){
       let index= EVENTS.findIndex(x=>x.id= event.id)
       EVENTS[index]=event
 
-    }
-    searchSessions(searchTerm:string){
-      let term=  searchTerm.toLocaleLowerCase(); 
+    } */
+    searchSessions(searchTerm:string): Observable<ISessions[]>{
+      return this.http.get<ISessions[]>(`/api/sessions/search?search=${searchTerm}`)
+      .pipe(catchError(this.handleError<ISessions[]>('searchSessions')))
+      /* let term=  searchTerm.toLocaleLowerCase(); 
       let results: ISessions[]=[];
 
         EVENTS.forEach(event=>{
@@ -61,8 +63,9 @@ export class EventService {
         setTimeout(()=>{
           emitter.emit(results)
         },100);
-          return emitter;
+          return emitter; */
     }
+
     private handleError<T>(operation= 'operation', result?: T){
       return (error: any): Observable<T> =>{
         console.error(error);
