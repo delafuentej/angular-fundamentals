@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../user/auth.service';
 import { EventService } from '../events';
 import { ISessions } from '../events/shared/event.model';
-import { $ } from 'protractor';
+
 
 @Component({
     selector:'nav-bar',

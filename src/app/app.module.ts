@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule , ActivatedRouteSnapshot} from '@angular/router';
 import { EventsAppComponent } from './events-app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { 
         EventsListComponent, 
         EventThumbnailComponent,
@@ -28,6 +29,7 @@ import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpVoteComponent } from './events/event-details/upvote.component';
+
 
 
 
@@ -65,7 +67,9 @@ let jQuery= window['$']
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    
   ],
   providers: [ 
     EventService, 
