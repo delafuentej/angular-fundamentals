@@ -9,7 +9,8 @@ import {
         EventService,
         EventDetailsComponent,
         CreateEventComponent,
-        EventRouteActivator,
+        /* EventRouteActivator, */
+        EventResolver,
         EventListResolver,
         CreateSessionComponent,
         SessionListComponent,
@@ -29,6 +30,7 @@ import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpVoteComponent } from './events/event-details/upvote.component';
+
 
 
 
@@ -59,6 +61,7 @@ let jQuery= window['$']
     DurationPipe,
     
     
+    
   
 
 
@@ -83,11 +86,13 @@ let jQuery= window['$']
       useValue: jQuery
     },
 
-    {
+
+    /* {
       provide:EventRouteActivator,
       useClass:EventRouteActivator
-    },
+    }, */
     /* EventRouteActivator,  */
+    EventResolver,
     EventListResolver,
     VoterService,
     AuthService,
