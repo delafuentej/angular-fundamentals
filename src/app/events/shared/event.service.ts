@@ -1,4 +1,4 @@
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs'; 
 import { catchError } from 'rxjs/operators';
@@ -30,9 +30,13 @@ export class EventService {
      /*  return EVENTS.find(event=> event.id === id) */
     }
     saveEvent(event){
-      event.id= 111
+      let options = { headers:new HttpHeaders({'Content-Type':'application/json'})}
+
+      return this.http.post<IEvent>('/api/events', event, options)
+      .pipe(catchError(this.handleError<IEvent>('saveEvent')))
+      /* event.id= 111
       event.session=[]
-      EVENTS.push(event)
+      EVENTS.push(event) */
     }
     updateEvent(event){
       let index= EVENTS.findIndex(x=>x.id= event.id)
