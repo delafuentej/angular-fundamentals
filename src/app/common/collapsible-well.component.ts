@@ -24,7 +24,7 @@ import { Component, Input } from "@angular/core";
     `
 })
 
-export class CollapsibleWell{
+export class CollapsibleWellComponent{
    /*  @Input() title:string; */
     visible:boolean=false;
 

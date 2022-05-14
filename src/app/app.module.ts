@@ -21,7 +21,7 @@ import {
 
 import { NavBarComponent } from './nav/navbar.component';
 
-import { TOASTR_TOKEN, Toastr, CollapsibleWell, JQ_TOKEN,SimpleModalComponent, ModalTriggerDirective} from './common/index';
+import { TOASTR_TOKEN, Toastr, CollapsibleWellComponent, JQ_TOKEN,SimpleModalComponent, ModalTriggerDirective} from './common/index';
 
 
 import { appRoutes } from './routes';
@@ -53,7 +53,7 @@ let jQuery= window['$']
     Error404Component,
     NavBarComponent,
     SessionListComponent,
-    CollapsibleWell,
+    CollapsibleWellComponent,
     SimpleModalComponent,
     ModalTriggerDirective,
     UpVoteComponent,
