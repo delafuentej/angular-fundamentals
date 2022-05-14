@@ -4,6 +4,7 @@ import { DebugElement } from '@angular/core';
 import { AuthService } from '../../user/auth.service';
 import { VoterService } from "./voter.service";
 import { DurationPipe } from '../shared/duration.pipe';
+import { By } from "@angular/platform-browser";
 
 
 describe('SessionListComponent', ()=>{
@@ -53,7 +54,9 @@ describe('SessionListComponent', ()=>{
 
             fixture.detectChanges();
 
-            expect(element.querySelector('[well-title]').textContent).toContain('Session 1')
+           /*  expect(element.querySelector('[well-title]').textContent).toContain('Session 1'); */
+
+            expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1')
         })
 
     })
