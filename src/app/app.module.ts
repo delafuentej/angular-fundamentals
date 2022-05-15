@@ -31,15 +31,8 @@ import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpVoteComponent } from './events/event-details/upvote.component';
 
-
-
-
-
-
-
-
-let toastr:Toastr= window['toastr'];
-let jQuery= window['$']
+const toastr:Toastr= window['toastr'];
+const jQuery= window['$']
 
 
 @NgModule({

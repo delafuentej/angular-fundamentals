@@ -16,10 +16,10 @@ import { Validators, FormGroup, NG_VALIDATORS } from "@angular/forms";
 })
 export class LocationValidator implements Validators{
     validate(formGroup: FormGroup):{[key:string]: any}{
-        let adressControl =formGroup.controls['adress'];
-        let cityControl =formGroup.controls['city'];
-        let countryControl =formGroup.controls['country'];
-        let onlineUrlControl =(<FormGroup>formGroup.root).controls['onlineUrl'];
+        const adressControl =formGroup.controls['adress'];
+        const cityControl =formGroup.controls['city'];
+        const countryControl =formGroup.controls['country'];
+        const onlineUrlControl =(<FormGroup>formGroup.root).controls['onlineUrl'];
 
         if((adressControl && adressControl.value && cityControl &&cityControl.value && countryControl && countryControl.value) || (onlineUrlControl && onlineUrlControl.value)){
             return null;

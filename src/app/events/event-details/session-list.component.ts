@@ -62,7 +62,7 @@ export class SessionListComponent{
 
 function sortByNameAscending(s1: ISessions, s2: ISessions){
     if(s1.name > s2.name) return 1;
-    else if(s1.name > s2.name) return 0;
+    else if(s1.name < s2.name) return 0;
     else return -1;
 }
 function sortByVotesDescending(s1: ISessions, s2: ISessions){
